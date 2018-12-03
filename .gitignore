@@ -1,0 +1,4 @@
+#I file corrispondenti ai pattern qui sotto indicati non verranno sincronizzati da git
+#a meno che non siano stati tracciati prima della creazione di questo file
+*.zip
+*.pdf
