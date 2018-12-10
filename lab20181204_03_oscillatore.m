@@ -44,15 +44,17 @@ for h=H
     xlabel('t'); ylabel('P');
 
 end
-
+%%
 figure(3); clf
 
 i=1;
-H=[0.5,2.5,5,6];
+%H=[0.5,1,2.5,5,6];
+%H=linspace(5,6,6);
+H=linspace(5.2631,5.2632,6); %riesco a vedere che h0~5.2631
 for h=H
     Nh=fix((T-t0)/h);
     [tn,un]=rk4(odefun,tspan,y0,Nh);
-    subplot(2,2,i);
+    subplot(3,2,i);
     i=i+1;
     plot(tn,L+un(:,1),tn,un(:,2))
     title(['Runge Kutta h=',num2str(h)]);
@@ -61,6 +63,7 @@ for h=H
     legend('y1','y2','location','west');
 
 end
+%%
 lambdas=eig(A)
 figure(4); clf
 plot(lambdas,'*')
